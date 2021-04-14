@@ -6,8 +6,8 @@ import {
 import './App.css';
 import Main from '../Main';
 import Home from '../../pages/Home';
-import First from '../../pages/First';
-import Second from '../../pages/Second';
+import Contact from '../../pages/Contact';
+import Login from '../../pages/Login';
 import Navbar from '../Navbar';
 
 function App() {
@@ -19,11 +19,11 @@ function App() {
       </div>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/first">
-          <First />
+        <Route exact path="/contact">
+          <Contact />
         </Route>
-        <Route exact path="/second">
-          <Second />
+        <Route exact path="/login">
+          <Login />
         </Route>
       </Switch>
     </BrowserRouter>

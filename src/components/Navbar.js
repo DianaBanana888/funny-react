@@ -8,8 +8,8 @@ export default function Navbar() {
     <div className="navbar">
 
       <Link to="/"><button type="button" className="navbar-button">Home</button></Link>
-      <Link to="/first"><button type="button" className="navbar-button">First</button></Link>
-      <Link to="/second"><button type="button" className="navbar-button">Second</button></Link>
+      <Link to="/contact"><button type="button" className="navbar-button">Contact us</button></Link>
+      <Link to="/login"><button type="button" className="navbar-button">Login</button></Link>
 
     </div>
   )

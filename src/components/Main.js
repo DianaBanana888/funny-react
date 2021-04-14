@@ -21,7 +21,7 @@ export default function Main() {
         className='button-new-joke'
         onClick={() => onClickHandler()}
       >
-        New Joke, please!
+        Geek-Joke, please!
           </button>
       <div className="text-joke">{joke}</div>
     </div>
