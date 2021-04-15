@@ -3,9 +3,10 @@ import actionTypes from './types';
 const initialState = {
   isAuthorized: false,
   userName: '',
-  userEmail: ''
+  userEmail: '',
 };
 
+// eslint-disable-next-line import/prefer-default-export
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.LOGIN:
@@ -21,7 +22,7 @@ export const reducer = (state = initialState, action) => {
         ...state,
         isAuthorized: false,
         userName: '',
-        userEmail: ''
+        userEmail: '',
       };
 
     default:

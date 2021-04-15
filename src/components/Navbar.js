@@ -1,20 +1,19 @@
 import React from 'react';
 import {
-  Link
+  Link,
 } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
-
-
 
 export default function Navbar() {
   return (
     <>
       <Nav
-        justify variant="tabs"
-        activeKey="/home"
+        justify
+        variant="tabs"
+        activeKey="/"
       >
         <Nav.Item>
-          <Link to="/home">Make a meme</Link>
+          <Link to="/">Make a meme</Link>
         </Nav.Item>
         <Nav.Item>
           <Link to="/contact">Contact us</Link>
@@ -24,5 +23,5 @@ export default function Navbar() {
         </Nav.Item>
       </Nav>
     </>
-  )
+  );
 }

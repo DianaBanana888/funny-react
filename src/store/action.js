@@ -3,10 +3,10 @@ import actionTypes from './types';
 export const loginAC = (name, email) => ({
   type: actionTypes.LOGIN,
   payload: {
-    name, email
-  }
+    name, email,
+  },
 });
 
 export const logOutAC = () => ({
-  type: actionTypes.LOGOUT
+  type: actionTypes.LOGOUT,
 });

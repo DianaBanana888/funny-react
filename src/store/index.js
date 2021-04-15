@@ -2,17 +2,18 @@ import { createStore } from 'redux';
 import { reducer } from './reducer';
 
 const initialState = () => {
-  const initialState = {
+  const startState = {
     isAuthorized: false,
-    userName: ''
+    userName: '',
   };
   return localStorage.getItem('reduxState')
     ? JSON.parse(localStorage.getItem('reduxState'))
-    : initialState;
+    : startState;
 };
 
+// eslint-disable-next-line import/prefer-default-export
 export const store = createStore(
-  reducer, initialState()
+  reducer, initialState(),
 );
 
 store.subscribe(() => {
