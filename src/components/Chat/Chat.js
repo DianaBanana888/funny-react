@@ -2,12 +2,8 @@ import React, { useState } from 'react'
 
 export default function Chat() {
   const [textAreaValue, setTextAreaValue] = useState("");
-  const [messages, setMessages] = useState([{
-    "user": "",
-    "text": ""
-  }]);
+  const [messages, setMessages] = useState([]);
   const [switcher, setSwitcher] = useState(false);
-  let counter = 0;
 
   const onChangeHandler = (e) => {
     setTextAreaValue(e.target.value);
@@ -31,40 +27,44 @@ export default function Chat() {
     ':)'
   ]
 
-  const onClickSubmitHandler = () => {
+  const onClickSubmitHandler = async () => {
     if (textAreaValue.length > 0) {
 
-      if (counter === 5) {
-        setSwitcher(true)
-      } else { counter++ };
+      if (messages.length >= 3) setSwitcher(true)
 
-      console.log(`counter`, counter)
-      //Jan; Maybe call user -> displayClass...
       const userMsg = {
         "user": "user",
-        "text": textAreaValue
+        "text": textAreaValue,
+        "key": new Date().toISOString()
       };
-      setMessages([...messages, userMsg])
       setTextAreaValue("")
-      setTimeout(function () {
-        const systemMsg = {
-          "user": "system",
-          "text": fake[Math.floor(Math.random() * fake.length)]
-        };
-        setMessages([...messages, systemMsg])
-      }, 5000);
+      setMessages(messages => [...messages, userMsg])
+
+      setTimeoutForAnswer();
     } else {
       alert("You didn't write any message yet")
     }
   };
+
+  function setTimeoutForAnswer() {
+    setTimeout(function () {
+      const systemMsg = {
+        "user": "system",
+        "text": fake[Math.floor(Math.random() * fake.length)],
+        "key": new Date().toISOString()
+      };
+      setMessages(messages => [...messages, systemMsg])
+    }, 4000);
+
+  }
 
 
   return (
     <div>
 
       <div className="messages">
-        <p className="system-msg">Hello, tell us about your problem.</p>
-        {messages.map(message => <p className={message.user}>{message.text}</p>)}
+        <p className="system">Hello, tell us about your problem.</p>
+        {messages.map(message => <p key={message.key} className={message.user}>{message.text}</p>)}
       </div>
 
       <div className="message-box">

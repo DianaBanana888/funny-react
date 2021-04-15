@@ -9,9 +9,12 @@ export default function Main() {
   }
   const onClickHandler = () => {
     request(options, (err, response, body) => {
-      if (!err && response.statusCode === 200)
+      if (!err && response.statusCode === 200) {
         console.log(body)
-      setJoke(body)
+        setJoke(body)
+      } else {
+        setJoke("Geek-jokes are exhausted of trying to make you laugh, try later")
+      }
     });
   }
 
