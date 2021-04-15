@@ -1,6 +1,12 @@
 import actionTypes from './types';
 
-export const reducers = (state, action) => {
+const initialState = {
+  isAuth: false,
+  userName: '',
+  userEmail: ''
+};
+
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.LOGIN:
       return {
@@ -8,7 +14,6 @@ export const reducers = (state, action) => {
         isAuth: true,
         userName: action.payload.name,
         userEmail: action.payload.email,
-        note: action.payload.arrayNote
       };
 
     case actionTypes.LOGOUT:
@@ -16,7 +21,7 @@ export const reducers = (state, action) => {
         ...state,
         isAuth: false,
         userName: '',
-        note: []
+        userEmail: ''
       };
 
     default:

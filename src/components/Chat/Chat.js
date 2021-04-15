@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Button from 'react-bootstrap/Button'
 
 export default function Chat() {
   const [textAreaValue, setTextAreaValue] = useState("");
@@ -76,17 +77,25 @@ export default function Chat() {
           value={textAreaValue}
           onChange={onChangeHandler}
         ></textarea>
-        <button className="message-submit" onClick={() => onClickSubmitHandler()}>Send</button>
-
-        {switcher
-          ? <div className="hidden-info">
-            It seems like our team cannot help you. But you can contact Sameer Kumar and tell your opinion!
-          <a href="https://github.com/sameerkumar18/geek-joke-api">Link to Sameer's github</a>
-          </div>
-          : <div />
-        }
-
+        <br />
+        <Button
+          size="lg"
+          variant="info"
+          className="message-submit"
+          onClick={() => onClickSubmitHandler()}
+        >Send</Button>
       </div>
+
+      {/* <button className="message-submit" onClick={() => onClickSubmitHandler()}>Send</button> */}
+
+      {switcher
+        ? <div className="hidden-info">
+          It seems like our team cannot help you. But you can contact Sameer Kumar and tell your opinion!
+          <a href="https://github.com/sameerkumar18/geek-joke-api">Link to Sameer's github</a>
+        </div>
+        : <div />
+      }
+
 
     </div >
   )

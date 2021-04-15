@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import Button from 'react-bootstrap/Button'
 const request = require('request');
 
 export default function Main() {
   const [joke, setJoke] = useState('');
+
   let options = {
     url: 'https://geek-jokes.sameerkumar.website/api?format=json',
     method: 'GET'
@@ -20,12 +22,20 @@ export default function Main() {
 
   return (
     <div>
-      <button
+      <br />
+      <Button
+        size="lg"
+        variant="danger"
+        className='button-new-joke'
+        onClick={() => onClickHandler()}
+      >Geek-Joke, please!</Button>
+
+      {/* <button
         className='button-new-joke'
         onClick={() => onClickHandler()}
       >
         Geek-Joke, please!
-          </button>
+          </button> */}
       <div className="text-joke">{joke}</div>
     </div>
   )

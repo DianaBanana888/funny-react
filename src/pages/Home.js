@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import request from 'request';
+import Button from 'react-bootstrap/Button';
+import Image from 'react-bootstrap/Image'
 
 export default function Home() {
   const [meme, setMeme] = useState('');
@@ -22,26 +24,14 @@ export default function Home() {
     });
   }
 
-
-
   async function onClickMemeHandler(a) {
-
-    // request(options, (err, response, body) => {
-    //   if (!err && response.statusCode === 200) {
-    //     let randomNumber = Math.floor(Math.random() * 100);
-    //     let a = JSON.parse(body)["data"]["memes"][randomNumber]["id"];
-    //     // console.log(typeof (a))
-    //     setMemeID(a)
-    //     console.log(`memeId`, memeID)
-    //   }
-    // });
 
     const formData = new FormData();
     formData.append('username', 'DianaErokhina');
     formData.append("password", "QMBdhXvNrE34!ya");
     formData.append("template_id", a);
-    formData.append("text0", "abc");
-    formData.append("text1", "asgdf");
+    formData.append("text0", "There are 10 types of people in the world");
+    formData.append("text1", "those who understand binary, and those who don’t");
 
     const response = await fetch('https://api.imgflip.com/caption_image', {
       method: 'POST',
@@ -56,14 +46,22 @@ export default function Home() {
 
   return (
     <div>
-      <button
+      <Button
+        variant="success"
+        className='button-new-joke'
+        onClick={() => onClickMemeIDHandler()}
+      >New Meme, please!</Button>{' '}
+
+      {/* <button
         className='button-new-joke'
         onClick={() => onClickMemeIDHandler()}
       >
         New Meme, please!
-          </button>
+          </button> */}
       <br />
-      <img src={meme} alt="meme" />
+      <br />
+      <Image src={meme} alt="meme" />
+      {/* <img src={meme} alt="meme" /> */}
     </div>
   )
 }

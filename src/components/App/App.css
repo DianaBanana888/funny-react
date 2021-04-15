@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -6,4 +7,37 @@
 }
 .popup-visible {
   visibility: visible;
+}
+
+body {
+  font-size: 1.6em;
+  font-family: Verdana, sans-serif;
+  text-align: center;
+}
+
+.login,.logout {
+  /* display: flex; */
+  text-align: left;
+  max-width: 320px;
+  padding: 60px ;
+  margin: auto;
+}
+
+.message-box {
+  width: 60%;
+  padding: 60px ;
+  margin: auto;
+  border-color: cyan;
+  border-radius: 5%;
+  border-width: thick;
+}
+
+.user {
+  text-align: right;
+  text-shadow: 1px 1px 2px black, 0 0 25px rgb(122, 245, 8), 0 0 5px green;
+}
+
+.system {
+  text-align: left;
+  text-shadow: 1px 1px 2px black, 0 0 25px rgb(0, 204, 255), 0 0 5px blue;
 }
