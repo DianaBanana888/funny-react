@@ -3,7 +3,7 @@ import { reducer } from './reducer';
 
 const initialState = () => {
   const initialState = {
-    isAuth: false,
+    isAuthorized: false,
     userName: ''
   };
   return localStorage.getItem('reduxState')

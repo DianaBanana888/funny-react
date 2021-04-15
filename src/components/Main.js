@@ -12,7 +12,6 @@ export default function Main() {
   const onClickHandler = () => {
     request(options, (err, response, body) => {
       if (!err && response.statusCode === 200) {
-        console.log(body)
         setJoke(body)
       } else {
         setJoke("Geek-jokes are exhausted of trying to make you laugh, try later")
@@ -28,14 +27,9 @@ export default function Main() {
         variant="danger"
         className='button-new-joke'
         onClick={() => onClickHandler()}
-      >Geek-Joke, please!</Button>
+      >Geek-Joke, please!
+      </Button>
 
-      {/* <button
-        className='button-new-joke'
-        onClick={() => onClickHandler()}
-      >
-        Geek-Joke, please!
-          </button> */}
       <div className="text-joke">{joke}</div>
     </div>
   )

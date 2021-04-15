@@ -64,8 +64,13 @@ export default function Chat() {
     <div>
 
       <div className="messages">
-        <p className="system">Hello, tell us about your problem.</p>
-        {messages.map(message => <p key={message.key} className={message.user}>{message.text}</p>)}
+        <div class="frame-outer">
+          <div class="frame-inner">
+            <p className="system"><span>Hello, tell us about your problem.</span></p>
+            {messages.map(message => <p key={message.key} className={message.user}>
+              <span>{message.text}</span></p>)}
+          </div>
+        </div>
       </div>
 
       <div className="message-box">
@@ -86,8 +91,6 @@ export default function Chat() {
         >Send</Button>
       </div>
 
-      {/* <button className="message-submit" onClick={() => onClickSubmitHandler()}>Send</button> */}
-
       {switcher
         ? <div className="hidden-info">
           It seems like our team cannot help you. But you can contact Sameer Kumar and tell your opinion!
@@ -95,7 +98,6 @@ export default function Chat() {
         </div>
         : <div />
       }
-
 
     </div >
   )

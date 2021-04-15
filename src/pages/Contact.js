@@ -22,7 +22,6 @@ export default function Contact() {
         Contact us
       </Button>
 
-      {/* <button onClick={onClickHandler} className="contact-us">Contact us</button> */}
       <div className={classStatus}>
         <Popup />
       </div>

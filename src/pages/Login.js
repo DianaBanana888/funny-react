@@ -8,7 +8,7 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const dispatch = useDispatch();
-  const { isAuth } = useSelector((state) => state);
+  const { isAuthorized } = useSelector((state) => state);
 
   function validateForm() {
     return email.length > 0 && name.length > 0;
@@ -17,7 +17,6 @@ export default function Login() {
   function handleSubmit(event) {
     event.preventDefault();
     dispatch(loginAC(name, email));
-    console.log(`auth done`)
   }
 
   function logoutForm() {
@@ -25,7 +24,7 @@ export default function Login() {
   }
 
   return (
-    !isAuth
+    !isAuthorized
       ? <div className="login">
         <Form onSubmit={handleSubmit}>
 

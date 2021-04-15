@@ -1,7 +1,7 @@
 import actionTypes from './types';
 
 const initialState = {
-  isAuth: false,
+  isAuthorized: false,
   userName: '',
   userEmail: ''
 };
@@ -11,7 +11,7 @@ export const reducer = (state = initialState, action) => {
     case actionTypes.LOGIN:
       return {
         ...state,
-        isAuth: true,
+        isAuthorized: true,
         userName: action.payload.name,
         userEmail: action.payload.email,
       };
@@ -19,7 +19,7 @@ export const reducer = (state = initialState, action) => {
     case actionTypes.LOGOUT:
       return {
         ...state,
-        isAuth: false,
+        isAuthorized: false,
         userName: '',
         userEmail: ''
       };
